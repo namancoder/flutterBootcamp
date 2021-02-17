@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'passwordGenerator.dart';
 
 void main() => runApp(MyApp());
 
@@ -24,6 +25,8 @@ class _HomePageState extends State<HomePage> {
 
   //Important in Forms
   var isLoading = false;
+  var email;
+  var password;
 
   void _submit() {
     final isValid = _formKey.currentState.validate();
@@ -59,6 +62,7 @@ class _HomePageState extends State<HomePage> {
               TextFormField(
                 decoration: InputDecoration(labelText: 'E-Mail'),
                 keyboardType: TextInputType.emailAddress,
+                onChanged: (value) => email = value,
                 onFieldSubmitted: (value) {
                   //Validator
                 },
@@ -79,6 +83,7 @@ class _HomePageState extends State<HomePage> {
               TextFormField(
                 decoration: InputDecoration(labelText: 'Password'),
                 keyboardType: TextInputType.emailAddress,
+                onChanged: (value) => password = value,
                 onFieldSubmitted: (value) {},
                 obscureText: true,
                 validator: (value) {
@@ -102,7 +107,19 @@ class _HomePageState extends State<HomePage> {
                     fontSize: 24.0,
                   ),
                 ),
-                onPressed: () => _submit(),
+                onPressed: () {
+                  void _showDialog() {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(title: Text('$email + $password'));
+                      },
+                    );
+                  }
+
+                  _showDialog();
+                  _submit();
+                },
               )
             ],
           ),
