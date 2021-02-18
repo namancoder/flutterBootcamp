@@ -1,8 +1,8 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:tic_tac_toe_game_flutter/game_button.dart';
 import 'custom_dailog.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -35,17 +35,20 @@ class _HomePageState extends State<HomePage> {
         player2.add(gb.id);
       }
       gb.enabled = false;
-      int winner=checkWinner();
-      if(winner==-1){
-        if(buttonList.every((p) => p.text!="")){
-          showDialog(context: context,
-          builder: (_)=>CustomDailog("Game tied", "Press the reset button to star again", resetGame));
-        }else{
-          activeplayer==2?autoPlay():null;
+      int winner = checkWinner();
+      if (winner == -1) {
+        if (buttonList.every((p) => p.text != "")) {
+          showDialog(
+              context: context,
+              builder: (_) => CustomDailog("Game tied",
+                  "Press the reset button to star again", resetGame));
+        } else {
+          activeplayer == 2 ? autoPlay() : null;
         }
       }
     });
   }
+
   void autoPlay() {
     var emptyCells = new List();
     var list = new List.generate(9, (i) => i + 1);
@@ -56,11 +59,10 @@ class _HomePageState extends State<HomePage> {
     }
 
     var r = new Random();
-    var randIndex = r.nextInt(emptyCells.length-1);
+    var randIndex = r.nextInt(emptyCells.length - 1);
     var cellID = emptyCells[randIndex];
-    int i = buttonList.indexWhere((p)=> p.id == cellID);
+    int i = buttonList.indexWhere((p) => p.id == cellID);
     playGame(buttonList[i]);
-
   }
 
   int checkWinner() {
@@ -159,8 +161,36 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Single Player"),
+      appBar: PreferredSize(
+        preferredSize: Size(double.infinity, 100),
+        child: Container(
+          decoration: BoxDecoration(boxShadow: [
+            BoxShadow(color: Colors.black12, spreadRadius: 5, blurRadius: 2)
+          ]),
+          width: MediaQuery.of(context).size.width,
+          height: 100,
+          child: Container(
+            decoration: BoxDecoration(
+                color: Colors.greenAccent[400],
+                borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(20),
+                    bottomRight: Radius.circular(20))),
+            child: Container(
+              margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Computer",
+                    style: GoogleFonts.oswald(
+                      fontSize: 30,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
