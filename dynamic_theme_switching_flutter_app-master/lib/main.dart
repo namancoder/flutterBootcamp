@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
                                 fit: BoxFit.fill),
                           ),
                         ),
-                        Text("Harsh ",
+                        Text("Naman",
                             style: TextStyle(fontSize: 22, color: Colors.white))
                       ],
                     )),
