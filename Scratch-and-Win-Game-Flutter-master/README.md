@@ -16,8 +16,10 @@ Logic:- When the game will load a random number will be generated automatically 
 ___
 Built using:-
 * Flutter
+* ->use of AudioPlayer and AudioCache
+
 ___
-Some snaps from the app:- <br>
+<!---Some snaps from the app:- <br>
 Full video:- https://youtu.be/pYy_gR2oxlc <br>
 ![Initial screen](https://res.cloudinary.com/harshkumarkhatri/image/upload/v1595322349/readme%20images/scratch%20and%20win%20game%20flutter/WhatsApp_Image_2020-07-21_at_2.19.41_PM_2_bnwdfr.jpg)
 ![rules](https://res.cloudinary.com/harshkumarkhatri/image/upload/v1595322349/readme%20images/scratch%20and%20win%20game%20flutter/WhatsApp_Image_2020-07-21_at_2.19.41_PM_1_li0zbe.jpg)
@@ -25,17 +27,7 @@ Full video:- https://youtu.be/pYy_gR2oxlc <br>
 ![first click](https://res.cloudinary.com/harshkumarkhatri/image/upload/v1595322373/readme%20images/scratch%20and%20win%20game%20flutter/WhatsApp_Image_2020-07-21_at_2.19.40_PM_3_zndjtj.jpg)
 ![Show all triggered](https://res.cloudinary.com/harshkumarkhatri/image/upload/v1595322373/readme%20images/scratch%20and%20win%20game%20flutter/WhatsApp_Image_2020-07-21_at_2.19.41_PM_kqymuv.jpg)
 ![Game lost](https://res.cloudinary.com/harshkumarkhatri/image/upload/v1595322374/readme%20images/scratch%20and%20win%20game%20flutter/WhatsApp_Image_2020-07-21_at_2.19.40_PM_lm8rfi.jpg)
-![Game won](https://res.cloudinary.com/harshkumarkhatri/image/upload/v1595322374/readme%20images/scratch%20and%20win%20game%20flutter/WhatsApp_Image_2020-07-21_at_2.19.40_PM_1_sa7xzd.jpg)
+![Game won](https://res.cloudinary.com/harshkumarkhatri/image/upload/v1595322374/readme%20images/scratch%20and%20win%20game%20flutter/WhatsApp_Image_2020-07-21_at_2.19.40_PM_1_sa7xzd.jpg
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
