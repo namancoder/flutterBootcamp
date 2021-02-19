@@ -27,15 +27,6 @@ Full video:- https://youtu.be/pYy_gR2oxlc <br>
 ![Game lost](https://res.cloudinary.com/harshkumarkhatri/image/upload/v1595322374/readme%20images/scratch%20and%20win%20game%20flutter/WhatsApp_Image_2020-07-21_at_2.19.40_PM_lm8rfi.jpg)
 ![Game won](https://res.cloudinary.com/harshkumarkhatri/image/upload/v1595322374/readme%20images/scratch%20and%20win%20game%20flutter/WhatsApp_Image_2020-07-21_at_2.19.40_PM_1_sa7xzd.jpg)
 
-## Getting Started
+##
+->use of AudioPlayer and AudioCache
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
