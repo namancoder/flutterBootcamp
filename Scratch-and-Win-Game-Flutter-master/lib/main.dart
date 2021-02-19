@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'home_page.dart';
 import 'first_page.dart';
 
-void main(){
+void main() {
   runApp(MyApp());
 }
 
@@ -12,11 +12,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: FirstPage(),
       theme: ThemeData(
-        primarySwatch: Colors.pink,
-      ),title: "Scratch and win",
+        primarySwatch: Colors.purple,
+      ),
+      title: "Scratch and win",
     );
   }
 }
 
-class Homepage {
-}
+class Homepage {}

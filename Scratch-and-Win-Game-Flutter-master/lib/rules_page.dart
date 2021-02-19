@@ -13,7 +13,7 @@ class _RulesPageState extends State<RulesPage> {
         title: Text("Scratch and Win"),
       ),
       body: Center(
-        child: Text("The rules for this game are pretty simple"),
+        child: Text("Hardest Game You Will Ever Play"),
       ),
     );
   }
