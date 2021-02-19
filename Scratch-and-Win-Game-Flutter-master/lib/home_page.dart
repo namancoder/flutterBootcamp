@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
     int random=Random().nextInt(25);
     setState(() {
       luckyNumber=random;
-      print(luckyNumber);
+      print('this is $luckyNumber');
     });
   }
 
@@ -135,7 +135,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[400],
+      backgroundColor: Colors.tealAccent,
       appBar: AppBar(
         title: Text(
           "Scratch and Win",
@@ -183,7 +183,7 @@ class _HomePageState extends State<HomePage> {
             children: [
               Container(
                 padding: EdgeInsets.fromLTRB(100, 12, 100, 12),
-                color: Colors.red[400],
+                color: Colors.orange[400],
                 child: Text(
                   this.message,style: TextStyle(fontSize: 10), //Here the message will be coming
                 ),
@@ -202,7 +202,7 @@ class _HomePageState extends State<HomePage> {
                       this.resetGame();
                     },
                     padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
-                    color: Colors.black,
+                    color: Colors.lime,
                     child: Text(
                       "Reset",
                       style: TextStyle(color: Colors.white),
@@ -216,7 +216,7 @@ class _HomePageState extends State<HomePage> {
                       this.showAll();
                     },
                     padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
-                    color: Colors.black,child: Text("Show all",style:TextStyle(color: Colors.white),),
+                    color: Colors.lime,child: Text("Show all",style:TextStyle(color: Colors.white),),
                   ),
                 )
               ],

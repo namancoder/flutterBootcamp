@@ -4,6 +4,8 @@ import 'rules_page.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
+//import 'package:percent_indicator/percent_indicator.dart';
+
 
 class FirstPage extends StatefulWidget {
   @override
@@ -39,8 +41,8 @@ class _FirstPageState extends State<FirstPage> {
               width: 256,
               child: Stack(
               children: [
-                Center(child: CircularProgressIndicator(),),
-                Center(child:FadeInImage.memoryNetwork(placeholder: kTransparentImage, image: 'https://res.cloudinary.com/harshkumarkhatri/image/upload/v1595320705/readme%20images/scratch%20and%20win%20game%20flutter/download_wpl1yb.png'))
+                //Center(child: LinearProgressIndicator(),),
+                Hero(tag: 'dash',child:Center(child:FadeInImage.memoryNetwork(placeholder: kTransparentImage, image: 'https://res.cloudinary.com/harshkumarkhatri/image/upload/v1595320705/readme%20images/scratch%20and%20win%20game%20flutter/download_wpl1yb.png')))
               ],
             ),
             ),
