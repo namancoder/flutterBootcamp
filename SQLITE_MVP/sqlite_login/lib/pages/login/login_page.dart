@@ -11,7 +11,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> implements LoginPageContract {
   BuildContext _ctx;
 
-  bool _isLoading;
+  bool _isLoading = false;
   final formKey = new GlobalKey<FormState>();
   final scaffoldKey = new GlobalKey<ScaffoldState>();
 
@@ -112,5 +112,6 @@ class _LoginPageState extends State<LoginPage> implements LoginPageContract {
     });
     var db = new DatabaseHelper();
     await db.saveUser(user);
+    Navigator.of(context).pushNamed("/home");
   }
 }

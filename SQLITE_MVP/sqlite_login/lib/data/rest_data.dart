@@ -1,5 +1,20 @@
-import 'package:sqlite_login/utils/network_util.dart';
+// import 'package:sqlite_login/utils/network_util.dart';
+// import 'dart:async';
+
+// class RestData {
+//   NetworkUtil _netUtil = new NetworkUtil();
+//   static final BASE_URL = "";
+//   static final LOGIN_URL = BASE_URL + "/";
+
+//   Future<User> login(String username, String password) {
+//     return null;
+//   }
+// }
+
 import 'dart:async';
+
+import 'package:sqlite_login/models/user.dart';
+import 'package:sqlite_login/utils/network_util.dart';
 
 class RestData {
   NetworkUtil _netUtil = new NetworkUtil();
@@ -7,6 +22,6 @@ class RestData {
   static final LOGIN_URL = BASE_URL + "/";
 
   Future<User> login(String username, String password) {
-    return null;
+    return new Future.value(new User(username, password));
   }
 }
