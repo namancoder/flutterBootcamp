@@ -78,10 +78,14 @@ class _TracksState extends State<Tracks> {
   List<SongInfo> songs = [];
   int currentIndex = 0;
   final GlobalKey<MusicPlayerState> key = GlobalKey<MusicPlayerState>();
+
+  ///
   void initState() {
     super.initState();
     getTracks();
   }
+
+  ///
 
   void getTracks() async {
     songs = await audioQuery.getSongs();
@@ -94,11 +98,13 @@ class _TracksState extends State<Tracks> {
     if (isNext) {
       if (currentIndex != songs.length - 1) {
         currentIndex++;
-      }
+      } else
+        currentIndex = 0;
     } else {
       if (currentIndex != 0) {
         currentIndex--;
-      }
+      } else
+        currentIndex = songs.length - 1;
     }
     key.currentState.setSong(songs[currentIndex]);
   }
@@ -108,7 +114,7 @@ class _TracksState extends State<Tracks> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading: Icon(Icons.music_note, color: Colors.black),
-        title: Text('Music App', style: TextStyle(color: Colors.black)),
+        title: Text('Musix', style: TextStyle(color: Colors.black)),
       ),
       body: ListView.separated(
         separatorBuilder: (context, index) => Divider(),

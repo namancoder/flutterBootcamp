@@ -115,7 +115,7 @@ class _TracksState extends State<Tracks> {
   Widget build(context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.grey,
+        //backgroundColor: Colors.grey,
         leading: Icon(Icons.music_note, color: Colors.black),
         title: Text('Musix', style: TextStyle(color: Colors.black)),
         actions: <Widget>[
