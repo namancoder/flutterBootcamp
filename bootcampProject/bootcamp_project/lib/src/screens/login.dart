@@ -1,7 +1,7 @@
-import 'package:bootcamp_project/src/google_sign_in/sign_up_widget.dart';
 import 'package:bootcamp_project/src/screens/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -15,6 +15,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       appBar: AppBar(
         title: Text("LOGIN"),
       ),
@@ -71,29 +72,42 @@ class _LoginScreenState extends State<LoginScreen> {
                       builder: (context) => HomeScreen(),
                     )));
                   }),
-                  
-
             ],
           ),
           SizedBox(
             height: 400,
           ),
-
-                    RaisedButton(
-                  
-                  color: Theme.of(context).accentColor,
-                  child: Text("Google Sign in"),
-                  onPressed: () {
-                    auth.createUserWithEmailAndPassword(
-                        email: _email, password: _password);
-                    Navigator.of(context).pushReplacement((MaterialPageRoute(
-                      builder: (context) => SignUpWidget(),
-                    )));
-                  }),
-          
+          // ChangeNotifierProvider(
+          //   create: (context) => GoogleSignInProvider(),
+          //   child: StreamBuilder<Object>(
+          //       stream: FirebaseAuth.instance.authStateChanges(),
+          //       builder: (context, snapshot) {
+          //         final provider =
+          //             Provider.of<GoogleSignInProvider>(context, listen: false);
+          //         provider.login();
+          //         if (provider.isSigningIn) {
+          //           return buildLoading();
+          //         } else if (snapshot.hasData) {
+          //           return LoggedInWidget();
+          //         }
+          //         else
+          //         return RaisedButton(
+          //             color: Theme.of(context).accentColor,
+          //             child: Text("Google Sign in"),
+          //             onPressed: () {
+          //               auth.createUserWithEmailAndPassword(
+          //                   email: _email, password: _password);
+          //               Navigator.of(context)
+          //                   .pushReplacement((MaterialPageRoute(
+          //                 builder: (context) => SignUpWidget(),
+          //               )));
+          //             });
+          //       }),
+          // ),
         ],
-        
       ),
     );
   }
+
+  Widget buildLoading() => Center(child: CircularProgressIndicator());
 }
