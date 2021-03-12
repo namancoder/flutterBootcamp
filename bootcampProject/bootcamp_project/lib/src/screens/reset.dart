@@ -1,22 +1,23 @@
 import 'package:bootcamp_project/src/screens/home.dart';
-import 'package:bootcamp_project/src/screens/reset.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class LoginScreen extends StatefulWidget {
+class ResetScreen extends StatefulWidget {
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _ResetScreenState createState() => _ResetScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
-  String _email, _password;
+class _ResetScreenState extends State<ResetScreen> {
+  String _email;
 
   final auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset:false,
+      //resizeToAvoidBottomPadding: false,
+            resizeToAvoidBottomInset:false,
+
       appBar: AppBar(
         title: Text("LOGIN"),
       ),
@@ -36,47 +37,29 @@ class _LoginScreenState extends State<LoginScreen> {
               },
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              obscureText: true,
-              decoration: InputDecoration(
-                hintText: 'PASSWORD',
-              ),
-              onChanged: (value) {
-                setState(() {
-                  _password = value.trim();
-                });
-              },
-            ),
-          ),
+
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               RaisedButton(
                   color: Theme.of(context).accentColor,
-                  child: Text("Sign IN"),
+                  child: Text("Send request"),
                   onPressed: () {
-                    auth.signInWithEmailAndPassword(
-                        email: _email, password: _password);
-                    Navigator.of(context).pushReplacement((MaterialPageRoute(
-                      builder: (context) => HomeScreen(),
-                    )));
-                  }),
-              RaisedButton(
-                  color: Theme.of(context).accentColor,
-                  child: Text("Sign UP"),
-                  onPressed: () {
-                    auth.createUserWithEmailAndPassword(
-                        email: _email, password: _password);
-                    Navigator.of(context).pushReplacement((MaterialPageRoute(
-                      builder: (context) => HomeScreen(),
-                    )));
+                    auth.sendPasswordResetEmail(email: _email);
+                    Navigator.of(context).pop();
                   }),
             ],
           ),
 
-          Row(children: [TextButton( child: Text("Forgot Password?"), onPressed: ()=> Navigator.of(context).pushReplacement((MaterialPageRoute(builder: (context)=>ResetScreen())),))],),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextButton(
+                child: Text("Forgot Password?"),
+                onPressed: () {},
+              ),
+            ],
+          ),
           SizedBox(
             height: 400,
           ),
